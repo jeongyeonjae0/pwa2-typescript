@@ -16,9 +16,9 @@ print1('홍길동');
 print1('홍길동', 20);
 
 // 필수 파라미터가 선택적 파라미터보다 뒤에 작성되면 안된다.
-function print2(name: string, age?: number, gender: string): void {
-    console.log(`${name}: ${age}: ${gender}`);
-}
+// function print2(name: string, age?: number, gender: string): void {
+    // console.log(`${name}: ${age}: ${gender}`);
+// }
 
 // -------------------------
 // Rest 파라미터
@@ -80,14 +80,14 @@ type FunB = (num: number) => 10;
 let funA: FunA = num => num;
 let funB: FunB = num => 10;
 funA = funB;
-funB = funA; // Error
+// funB = funA; // Error
 
 // 파라미터의 타입 호환성: 다운 캐스팅에서 허용
 type FunC = (num: number) => number;
 type FunD = (num: 10) => number;
 let funC: FunC = num => num;
 let funD: FunD = num => num;
-funC = funD; // Error
+// funC = funD; // Error
 funD = funC;
 funC(1);
 funD(10);
@@ -107,7 +107,7 @@ function addOver(a: number, b: number, c?:number, d?:number): number {
     }
 }
 addOver(1, 2);
-addOver(1, 2, 3); // Error" 파라미터가 3개인 시그니처는 정의하지 않았으므로 에러 발생
+// addOver(1, 2, 3); // Error" 파라미터가 3개인 시그니처는 정의하지 않았으므로 에러 발생
 addOver(1, 2, 3, 4);
 
 // -------------------------
